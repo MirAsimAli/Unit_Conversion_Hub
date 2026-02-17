@@ -1,0 +1,495 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quick Calculator | Unit Converter Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online quick calculator for basic math operations. Fast and simple.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Unit Converter Hub</div>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="quick-calculator.html">Quick Calculator</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <h1>Quick Calculator</h1>
+    <p>Perform instant mathematical calculations.</p>
+</section>
+
+<section class="section">
+
+<div class="card" style="max-width:400px; margin:auto; text-align:center;">
+
+    <input type="text" id="calcDisplay" placeholder="0"
+           style="width:100%; padding:15px; font-size:20px; margin-bottom:15px; text-align:right;" readonly>
+
+    <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap:10px;">
+
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('/')">÷</button>
+
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('*')">×</button>
+
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('-')">−</button>
+
+        <button onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="press('+')">+</button>
+
+        <button onclick="clearDisplay()" style="grid-column: span 4;">Clear</button>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 Unit Converter Hub
+</footer>
+
+<script src="../js/core.js"></script>
+
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quick Calculator | Unit Converter Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online quick calculator for basic math operations. Fast and simple.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --ink: #0a0a0f;
+            --ink-soft: #3a3a4a;
+            --ink-muted: #7a7a8f;
+            --surface: #f5f4f0;
+            --surface-warm: #eceae3;
+            --accent: #e8440a;
+            --line: rgba(10, 10, 15, 0.1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--surface);
+            color: var(--ink);
+            overflow-x: hidden;
+            cursor: none;
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+        }
+
+        /* CURSOR */
+        .cursor {
+            position: fixed; width: 10px; height: 10px;
+            background: var(--accent); border-radius: 50%;
+            pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.25s ease, height 0.25s ease;
+            mix-blend-mode: multiply;
+        }
+        .cursor-ring {
+            position: fixed; width: 36px; height: 36px;
+            border: 1.5px solid var(--accent); border-radius: 50%;
+            pointer-events: none; z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+            opacity: 0.5;
+        }
+
+        /* NOISE */
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 1000; opacity: 0.4;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.5rem 4rem;
+            backdrop-filter: blur(12px);
+            background: rgba(245, 244, 240, 0.85);
+            border-bottom: 1px solid var(--line);
+            transition: padding 0.3s ease;
+        }
+        .logo {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: 1.1rem; letter-spacing: -0.02em; color: var(--ink);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        nav { display: flex; align-items: center; gap: 2.5rem; }
+        nav a {
+            font-size: 0.82rem; font-weight: 500;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--ink-soft); text-decoration: none;
+            position: relative; transition: color 0.2s ease;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: -3px; left: 0;
+            width: 0; height: 1.5px; background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        nav a:hover { color: var(--ink); }
+        nav a:hover::after { width: 100%; }
+        nav a.active { color: var(--accent); }
+        nav a.active::after { width: 100%; }
+
+        /* MAIN LAYOUT */
+        main {
+            flex: 1;
+            display: grid; grid-template-columns: 1fr 1fr;
+            margin-top: 72px;
+        }
+
+        /* LEFT PANEL - hero info */
+        .hero-left {
+            background: var(--surface);
+            display: flex; flex-direction: column;
+            justify-content: center;
+            padding: 5rem 4rem;
+            position: relative;
+        }
+        .hero-eyebrow {
+            font-size: 0.78rem; font-weight: 500;
+            letter-spacing: 0.16em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 1.5rem;
+            display: flex; align-items: center; gap: 0.75rem;
+            opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+        .hero-eyebrow::before {
+            content: ''; display: block;
+            width: 32px; height: 1.5px; background: var(--accent);
+        }
+        h1 {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+            line-height: 0.95; letter-spacing: -0.03em;
+            color: var(--ink); margin-bottom: 1.5rem;
+            opacity: 0; animation: fadeUp 0.9s ease 0.35s forwards;
+        }
+        h1 em { font-style: italic; color: var(--accent); }
+        .hero-desc {
+            font-size: 1rem; line-height: 1.7;
+            color: var(--ink-soft); max-width: 380px; font-weight: 300;
+            opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards;
+        }
+
+        /* KEYBOARD HINT */
+        .keyboard-hint {
+            margin-top: 2.5rem;
+            opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards;
+        }
+        .keyboard-hint p {
+            font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--ink-muted); margin-bottom: 0.75rem;
+        }
+        .key-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .key-badge {
+            font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700;
+            color: var(--ink-soft);
+            border: 1px solid var(--line);
+            background: var(--surface-warm);
+            padding: 0.3rem 0.65rem;
+        }
+
+        /* RIGHT PANEL - calculator */
+        .calc-panel {
+            background: var(--ink);
+            display: flex; align-items: center; justify-content: center;
+            padding: 4rem 3rem;
+            position: relative; overflow: hidden;
+        }
+        .calc-panel::before {
+            content: '';
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(232,68,10,0.08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .calculator {
+            width: 100%; max-width: 360px;
+            position: relative; z-index: 2;
+            opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
+        }
+
+        /* DISPLAY */
+        .calc-display-wrap {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 2px solid var(--accent);
+            padding: 1.5rem 1.5rem 1.2rem;
+            margin-bottom: 1px;
+        }
+        .calc-expression {
+            font-size: 0.78rem; color: rgba(245,244,240,0.3);
+            letter-spacing: 0.06em; text-align: right;
+            min-height: 1.2em; margin-bottom: 0.4rem;
+            font-family: 'Syne', sans-serif;
+        }
+        #calcDisplay {
+            width: 100%; background: transparent; border: none; outline: none;
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem; font-weight: 800;
+            color: var(--surface); text-align: right;
+            letter-spacing: -0.02em;
+            caret-color: var(--accent);
+        }
+
+        /* BUTTON GRID */
+        .calc-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 1px; background: rgba(255,255,255,0.05);
+        }
+
+        .calc-btn {
+            background: rgba(255,255,255,0.03);
+            border: none; outline: none; cursor: pointer;
+            font-family: 'Syne', sans-serif; font-weight: 700;
+            font-size: 1.1rem; color: var(--surface);
+            padding: 1.2rem 0.5rem;
+            transition: background 0.15s ease, color 0.15s ease;
+            position: relative; overflow: hidden;
+        }
+        .calc-btn:hover { background: rgba(255,255,255,0.08); }
+        .calc-btn:active { background: rgba(255,255,255,0.12); transform: scale(0.97); }
+
+        .calc-btn.operator {
+            color: var(--accent);
+            background: rgba(232,68,10,0.06);
+        }
+        .calc-btn.operator:hover { background: rgba(232,68,10,0.14); }
+
+        .calc-btn.equals {
+            background: var(--accent); color: var(--surface);
+        }
+        .calc-btn.equals:hover { background: #d03a08; }
+
+        .calc-btn.clear {
+            grid-column: span 4;
+            background: rgba(255,255,255,0.04);
+            color: rgba(245,244,240,0.5);
+            font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 1rem;
+        }
+        .calc-btn.clear:hover { background: rgba(232,68,10,0.1); color: var(--accent); }
+
+        /* FOOTER */
+        footer {
+            background: var(--surface-warm); border-top: 1px solid var(--line);
+            padding: 2.5rem 4rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .footer-logo {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: 0.95rem; color: var(--ink);
+        }
+        .footer-logo span { color: var(--accent); }
+        .footer-copy { font-size: 0.8rem; color: var(--ink-muted); }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            header { padding: 1.25rem 2rem; }
+            nav { gap: 1.5rem; }
+            main { grid-template-columns: 1fr; }
+            .hero-left { padding: 3rem 2rem; }
+            .calc-panel { padding: 3rem 2rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Unit<span>Converter</span>Hub</div>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="quick-calculator.html" class="active">Quick Calculator</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- LEFT: Info panel -->
+    <div class="hero-left">
+        <div class="hero-eyebrow">Student Tools</div>
+        <h1>Quick <em>Calculator</em></h1>
+        <p class="hero-desc">Perform instant mathematical calculations.</p>
+        <div class="keyboard-hint">
+            <p>Keyboard shortcuts</p>
+            <div class="key-badges">
+                <span class="key-badge">0–9</span>
+                <span class="key-badge">+ − × ÷</span>
+                <span class="key-badge">Enter =</span>
+                <span class="key-badge">Esc Clear</span>
+                <span class="key-badge">Backspace ←</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: Calculator -->
+    <div class="calc-panel">
+        <div class="calculator">
+            <div class="calc-display-wrap">
+                <div class="calc-expression" id="calcExpression"></div>
+                <input type="text" id="calcDisplay" placeholder="0" readonly>
+            </div>
+            <div class="calc-grid">
+                <button class="calc-btn" onclick="press('7')">7</button>
+                <button class="calc-btn" onclick="press('8')">8</button>
+                <button class="calc-btn" onclick="press('9')">9</button>
+                <button class="calc-btn operator" onclick="press('/')">÷</button>
+
+                <button class="calc-btn" onclick="press('4')">4</button>
+                <button class="calc-btn" onclick="press('5')">5</button>
+                <button class="calc-btn" onclick="press('6')">6</button>
+                <button class="calc-btn operator" onclick="press('*')">×</button>
+
+                <button class="calc-btn" onclick="press('1')">1</button>
+                <button class="calc-btn" onclick="press('2')">2</button>
+                <button class="calc-btn" onclick="press('3')">3</button>
+                <button class="calc-btn operator" onclick="press('-')">−</button>
+
+                <button class="calc-btn" onclick="press('0')">0</button>
+                <button class="calc-btn" onclick="press('.')">.</button>
+                <button class="calc-btn equals" onclick="calculateResult()">=</button>
+                <button class="calc-btn operator" onclick="press('+')">+</button>
+
+                <button class="calc-btn clear" onclick="clearDisplay()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">Unit<span>Converter</span>Hub</div>
+    <div class="footer-copy">© 2026 Unit Converter Hub</div>
+</footer>
+
+<script src="../js/core.js"></script>
+<script>
+    // Cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
+    });
+    function animateRing() {
+        ringX += (mouseX - ringX) * 0.12; ringY += (mouseY - ringY) * 0.12;
+        ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+        requestAnimationFrame(animateRing);
+    }
+    animateRing();
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.width = '18px'; cursor.style.height = '18px';
+            ring.style.width = '56px'; ring.style.height = '56px'; ring.style.opacity = '0.3';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.width = '10px'; cursor.style.height = '10px';
+            ring.style.width = '36px'; ring.style.height = '36px'; ring.style.opacity = '0.5';
+        });
+    });
+
+    // Header shrink
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        header.style.padding = window.scrollY > 60 ? '1rem 4rem' : '1.5rem 4rem';
+    });
+
+    // Button press animation
+    document.querySelectorAll('.calc-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.style.transform = 'scale(0.94)';
+            setTimeout(() => btn.style.transform = '', 100);
+        });
+    });
+
+    // Keyboard support
+    document.addEventListener('keydown', e => {
+        if ('0123456789'.includes(e.key)) press(e.key);
+        else if (e.key === '+') press('+');
+        else if (e.key === '-') press('-');
+        else if (e.key === '*') press('*');
+        else if (e.key === '/') { e.preventDefault(); press('/'); }
+        else if (e.key === '.') press('.');
+        else if (e.key === 'Enter' || e.key === '=') calculateResult();
+        else if (e.key === 'Escape') clearDisplay();
+        else if (e.key === 'Backspace') {
+            const d = document.getElementById('calcDisplay');
+            d.value = d.value.slice(0, -1) || '';
+        }
+    });
+
+    // Expression display helper — updates expression line while typing
+    const origPress = window.press;
+    if (typeof window.press === 'function') {
+        const _origPress = window.press;
+        window.press = function(val) {
+            _origPress(val);
+            updateExpression();
+        };
+    }
+
+    function updateExpression() {
+        const d = document.getElementById('calcDisplay');
+        const expr = document.getElementById('calcExpression');
+        if (expr && d) expr.textContent = d.value || '';
+    }
+</script>
+</body>
+</html>

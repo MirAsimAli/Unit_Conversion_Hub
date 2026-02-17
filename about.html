@@ -1,0 +1,1283 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Unit Converter Hub | Free Online Converters & Calculators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Unit Converter Hub is a free online smart unit conversion platform offering length, weight, temperature, area, volume, pressure, speed converters, construction calculators, and student tools. Fast, accurate and easy to use.">
+
+    <meta name="keywords" content="unit converter, online converter, length converter, weight converter, temperature converter, engineering units, pressure converter, speed converter, brick calculator, cement calculator, tile calculator, physics formulas, quick calculator">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Unit Converter Hub</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#converters">Converters</a>
+        <a href="index.html#calculators">Calculators</a>
+        <a href="index.html#student-tools">Student Tools</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <h1>About Unit Converter Hub</h1>
+    <p>Your All-in-One Smart Online Conversion & Calculation Platform</p>
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>Who We Are</h2>
+<p>
+Unit Converter Hub is a modern, fast, and accurate online unit conversion platform
+designed for students, engineers, builders, and everyday users. Our goal is to make
+mathematical and engineering calculations simple, reliable, and accessible to everyone.
+</p>
+
+<h2>What We Offer</h2>
+<ul>
+<li>Length, Weight, Temperature, Area & Volume Converters</li>
+<li>Engineering Unit Conversions (Pressure, Speed, Density)</li>
+<li>Construction Calculators (Brick, Cement, Tiles)</li>
+<li>Physics Formula Sheet for Students</li>
+<li>Quick Online Calculator</li>
+</ul>
+
+<h2>Why Choose Us?</h2>
+<p>
+✔ Fast and lightweight tools  
+✔ Accurate real-world formulas  
+✔ Mobile-friendly design  
+✔ Clean, distraction-free interface  
+✔ Free to use — no registration required
+</p>
+
+<h2>Our Vision</h2>
+<p>
+We aim to become one of the most trusted free online unit converter and
+construction calculator platforms worldwide by providing reliable tools
+with a user-friendly experience.
+</p>
+
+<h2>Who Uses Unit Converter Hub?</h2>
+<p>
+Students solving physics problems, civil engineers calculating materials,
+contractors estimating construction costs, and individuals needing quick
+unit conversions — all rely on our smart and accurate tools.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 Unit Converter Hub — Free Online Converters & Calculators
+</footer>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Unit Converter Hub | Free Online Converters & Calculators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unit Converter Hub is a free online smart unit conversion platform offering length, weight, temperature, area, volume, pressure, speed converters, construction calculators, and student tools.">
+    <meta name="keywords" content="unit converter, online converter, length converter, weight converter, temperature converter, engineering units, pressure converter, speed converter">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --ink: #0a0a0f;
+            --ink-soft: #3a3a4a;
+            --ink-muted: #7a7a8f;
+            --surface: #f5f4f0;
+            --surface-warm: #eceae3;
+            --accent: #e8440a;
+            --accent-glow: rgba(232, 68, 10, 0.15);
+            --gold: #c9a84c;
+            --line: rgba(10, 10, 15, 0.1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--surface);
+            color: var(--ink);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* --- CURSOR --- */
+        .cursor {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease, width 0.25s ease, height 0.25s ease, background 0.25s ease;
+            mix-blend-mode: multiply;
+        }
+        .cursor-ring {
+            position: fixed;
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: transform 0.18s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+            opacity: 0.5;
+        }
+
+        /* --- NOISE TEXTURE OVERLAY --- */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.4;
+        }
+
+        /* --- HEADER / NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 4rem;
+            backdrop-filter: blur(12px);
+            background: rgba(245, 244, 240, 0.85);
+            border-bottom: 1px solid var(--line);
+            transition: padding 0.3s ease;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover { color: var(--ink); }
+        nav a:hover::after { width: 100%; }
+        nav a.active { color: var(--accent); }
+        nav a.active::after { width: 100%; }
+
+        /* --- HERO --- */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 8rem 4rem 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 1.5px;
+            background: var(--accent);
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(3.2rem, 5.5vw, 6rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease 0.35s forwards;
+        }
+
+        h1 em {
+            font-style: italic;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--ink-soft);
+            max-width: 420px;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeUp 0.9s ease 0.5s forwards;
+        }
+
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+            background: var(--ink);
+        }
+
+        .hero-graphic {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeIn 1.2s ease 0.6s forwards;
+        }
+
+        .hero-circles {
+            position: relative;
+            width: 380px;
+            height: 380px;
+        }
+
+        .hc {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(245, 244, 240, 0.08);
+            animation: spin linear infinite;
+        }
+
+        .hc:nth-child(1) { inset: 0; animation-duration: 40s; }
+        .hc:nth-child(2) { inset: 30px; animation-duration: 30s; animation-direction: reverse; border-color: rgba(232,68,10,0.2); }
+        .hc:nth-child(3) { inset: 80px; animation-duration: 20s; border-color: rgba(245,244,240,0.12); }
+        .hc:nth-child(4) { inset: 130px; animation-duration: 14s; animation-direction: reverse; border-color: rgba(232,68,10,0.3); }
+        .hc:nth-child(5) { inset: 165px; animation-duration: 8s; border-color: rgba(245,244,240,0.2); }
+
+        .hc-dot {
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .hc:nth-child(2) .hc-dot { background: rgba(245,244,240,0.5); width: 5px; height: 5px; }
+        .hc:nth-child(3) .hc-dot { background: var(--gold); }
+        .hc:nth-child(4) .hc-dot { display: none; }
+
+        .hero-center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--surface);
+        }
+
+        .hero-center-text .big-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--accent);
+        }
+
+        .hero-center-text .label {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(245,244,240,0.45);
+            margin-top: 0.3rem;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            opacity: 0;
+            animation: fadeUp 0.8s ease 1s forwards;
+        }
+
+        .scroll-line {
+            width: 40px;
+            height: 1px;
+            background: var(--ink-muted);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            animation: scrollLine 2s ease infinite;
+        }
+
+        /* --- STATS STRIP --- */
+        .stats-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            background: var(--surface-warm);
+        }
+
+        .stat-item {
+            padding: 3rem 3.5rem;
+            border-right: 1px solid var(--line);
+            opacity: 0;
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+        .stat-item:nth-child(4) { animation-delay: 0.4s; border-right: none; }
+
+        .stat-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+        }
+
+        .stat-num span { color: var(--accent); }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--ink-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* --- SECTIONS --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 0;
+            padding: 7rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            padding-top: 0.4rem;
+        }
+
+        .content-body h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.5rem;
+            color: var(--ink);
+        }
+
+        .content-body h2 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .content-body p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--ink-soft);
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        /* --- WHAT WE OFFER --- */
+        .offer-section {
+            background: var(--ink);
+            padding: 7rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-section::before {
+            content: 'TOOLS';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Syne', sans-serif;
+            font-size: 18vw;
+            font-weight: 800;
+            color: rgba(255,255,255,0.02);
+            letter-spacing: -0.05em;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .offer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .offer-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 4rem;
+        }
+
+        .offer-header h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--surface);
+            line-height: 1;
+        }
+
+        .offer-header h2 em {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .offer-sub {
+            font-size: 0.85rem;
+            color: rgba(245,244,240,0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.06);
+        }
+
+        .tool-card {
+            background: var(--ink);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .tool-card:hover { background: rgba(255,255,255,0.03); }
+        .tool-card:hover::before { transform: scaleX(1); }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            display: block;
+            filter: grayscale(0.3);
+        }
+
+        .tool-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--surface);
+            margin-bottom: 0.6rem;
+        }
+
+        .tool-desc {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: rgba(245,244,240,0.4);
+            font-weight: 300;
+        }
+
+        .tool-tag {
+            display: inline-block;
+            margin-top: 1.2rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid rgba(232,68,10,0.3);
+            padding: 0.25rem 0.7rem;
+            border-radius: 2rem;
+        }
+
+        /* --- WHY US --- */
+        .why-section {
+            padding: 7rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-header {
+            margin-bottom: 4rem;
+        }
+
+        .why-header .eyebrow {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .why-header .eyebrow::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1.5px;
+            background: var(--accent);
+        }
+
+        .why-header h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: var(--ink);
+            line-height: 1.05;
+        }
+
+        .why-header h2 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .reasons-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2px;
+            background: var(--line);
+        }
+
+        .reason {
+            background: var(--surface);
+            padding: 2.5rem 2rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .reason:hover {
+            background: var(--surface-warm);
+            transform: translateY(-4px);
+        }
+
+        .reason-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .reason-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .reason-text {
+            font-size: 0.83rem;
+            line-height: 1.6;
+            color: var(--ink-muted);
+        }
+
+        /* --- VISION MARQUEE --- */
+        .marquee-section {
+            background: var(--surface-warm);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 2rem 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 3rem;
+            animation: marquee 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-item {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .marquee-item .dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* --- USERS SECTION --- */
+        .users-section {
+            padding: 7rem 4rem;
+            background: var(--surface);
+        }
+
+        .users-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .users-left h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+        }
+
+        .users-left h2 em { color: var(--accent); font-style: italic; }
+
+        .users-left p {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--ink-soft);
+            font-weight: 300;
+        }
+
+        .user-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--line);
+        }
+
+        .user-card {
+            background: var(--surface-warm);
+            padding: 2rem;
+            transition: background 0.3s ease;
+        }
+
+        .user-card:hover { background: var(--ink); }
+        .user-card:hover .user-card-title { color: var(--surface); }
+        .user-card:hover .user-card-text { color: rgba(245,244,240,0.5); }
+        .user-card:hover .user-card-icon { filter: brightness(10); }
+
+        .user-card-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; transition: filter 0.3s ease; }
+
+        .user-card-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .user-card-text {
+            font-size: 0.82rem;
+            line-height: 1.55;
+            color: var(--ink-muted);
+            transition: color 0.3s ease;
+        }
+
+        /* --- VISION SECTION --- */
+        .vision-section {
+            padding: 7rem 4rem;
+            background: var(--ink);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(232,68,10,0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .vision-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vision-inner .eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .vision-inner .eyebrow::before,
+        .vision-inner .eyebrow::after {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1.5px;
+            background: var(--accent);
+        }
+
+        .vision-inner h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            color: var(--surface);
+            margin-bottom: 2rem;
+        }
+
+        .vision-inner h2 em { color: var(--accent); font-style: italic; }
+
+        .vision-inner p {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: rgba(245,244,240,0.5);
+            font-weight: 300;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--surface-warm);
+            border-top: 1px solid var(--line);
+            padding: 2.5rem 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        .footer-logo span { color: var(--accent); }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: var(--ink-muted);
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-nav a {
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-nav a:hover { color: var(--ink); }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes scrollLine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* Intersection Observer animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            header { padding: 1.25rem 2rem; }
+            nav { display: none; }
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-left { padding: 7rem 2rem 4rem; }
+            .hero-right { height: 320px; }
+            .hero-scroll { left: 2rem; }
+            .stats-strip { grid-template-columns: 1fr 1fr; }
+            .stat-item:nth-child(2) { border-right: none; }
+            .stat-item:nth-child(4) { border-right: none; }
+            .content-grid { grid-template-columns: 1fr; gap: 1rem; padding: 4rem 2rem; }
+            .offer-section { padding: 4rem 2rem; }
+            .tools-grid { grid-template-columns: 1fr; }
+            .reasons-list { grid-template-columns: 1fr 1fr; }
+            .users-section { padding: 4rem 2rem; }
+            .users-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .vision-section { padding: 5rem 2rem; }
+            .why-section { padding: 4rem 2rem; }
+            footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Unit<span>Converter</span>Hub</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#converters">Converters</a>
+        <a href="index.html#calculators">Calculators</a>
+        <a href="index.html#student-tools">Student Tools</a>
+        <a href="about.html" class="active">About</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-left">
+        <div class="hero-eyebrow">Our Story</div>
+        <h1>Built for<br>the <em>curious</em><br>& the precise</h1>
+        <p class="hero-desc">Unit Converter Hub is where engineering clarity meets effortless usability — free tools designed for everyone from students to site managers.</p>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            Scroll to explore
+        </div>
+    </div>
+    <div class="hero-right">
+        <div class="hero-graphic">
+            <div class="hero-circles">
+                <div class="hc"><div class="hc-dot"></div></div>
+                <div class="hc"><div class="hc-dot"></div></div>
+                <div class="hc"><div class="hc-dot"></div></div>
+                <div class="hc"><div class="hc-dot"></div></div>
+                <div class="hc"></div>
+            </div>
+            <div class="hero-center-text">
+                <div class="big-num">∞</div>
+                <div class="label">Conversions</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+    <div class="stat-item reveal">
+        <div class="stat-num">20<span>+</span></div>
+        <div class="stat-label">Converter Tools</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Free Forever</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Registration Needed</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-num">1<span>ms</span></div>
+        <div class="stat-label">Average Load Time</div>
+    </div>
+</div>
+
+<!-- WHO WE ARE -->
+<div class="content-grid">
+    <div class="section-label reveal">Who we are</div>
+    <div class="content-body reveal reveal-delay-1">
+        <h2>A platform built around <em>precision</em> and simplicity</h2>
+        <p>Unit Converter Hub is a modern, fast, and accurate online unit conversion platform designed for students, engineers, builders, and everyday users. Our goal is to make mathematical and engineering calculations simple, reliable, and accessible to everyone — with zero clutter, zero cost, and zero compromise on accuracy.</p>
+    </div>
+</div>
+
+<!-- WHAT WE OFFER -->
+<section class="offer-section">
+    <div class="offer-inner">
+        <div class="offer-header reveal">
+            <h2>What we<br><em>offer</em></h2>
+            <div class="offer-sub">Five categories of tools</div>
+        </div>
+        <div class="tools-grid">
+            <div class="tool-card reveal reveal-delay-1">
+                <span class="tool-icon">📐</span>
+                <div class="tool-name">Unit Converters</div>
+                <div class="tool-desc">Length, Weight, Temperature, Area, Volume — all converted instantly with real-world accuracy.</div>
+                <span class="tool-tag">Core Tools</span>
+            </div>
+            <div class="tool-card reveal reveal-delay-2">
+                <span class="tool-icon">⚙️</span>
+                <div class="tool-name">Engineering Units</div>
+                <div class="tool-desc">Pressure, Speed, Density, and force conversions built for professionals and students alike.</div>
+                <span class="tool-tag">Engineering</span>
+            </div>
+            <div class="tool-card reveal reveal-delay-3">
+                <span class="tool-icon">🏗️</span>
+                <div class="tool-name">Construction Calculators</div>
+                <div class="tool-desc">Brick, cement, and tile calculators designed to help contractors and builders estimate with confidence.</div>
+                <span class="tool-tag">Construction</span>
+            </div>
+            <div class="tool-card reveal reveal-delay-1">
+                <span class="tool-icon">🔬</span>
+                <div class="tool-name">Physics Formula Sheet</div>
+                <div class="tool-desc">A comprehensive student-focused reference covering core physics formulas at a glance.</div>
+                <span class="tool-tag">Student Tools</span>
+            </div>
+            <div class="tool-card reveal reveal-delay-2">
+                <span class="tool-icon">🧮</span>
+                <div class="tool-name">Quick Calculator</div>
+                <div class="tool-desc">An always-available online calculator for fast, reliable computations — no app download required.</div>
+                <span class="tool-tag">Utility</span>
+            </div>
+            <div class="tool-card reveal reveal-delay-3">
+                <span class="tool-icon">📱</span>
+                <div class="tool-name">Mobile Optimized</div>
+                <div class="tool-desc">Every tool works flawlessly on any device — on-site, in the classroom, or on the move.</div>
+                <span class="tool-tag">All Devices</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+    <div class="why-header reveal">
+        <div class="eyebrow">Why choose us</div>
+        <h2>Five reasons to <em>trust</em><br>our tools</h2>
+    </div>
+    <div class="reasons-list">
+        <div class="reason reveal reveal-delay-1">
+            <div class="reason-num">01</div>
+            <div class="reason-title">Lightning Fast</div>
+            <div class="reason-text">Lightweight tools that load in under a second, no matter where you are.</div>
+        </div>
+        <div class="reason reveal reveal-delay-2">
+            <div class="reason-num">02</div>
+            <div class="reason-title">Real-World Accuracy</div>
+            <div class="reason-text">Formulas verified against engineering standards and scientific references.</div>
+        </div>
+        <div class="reason reveal reveal-delay-3">
+            <div class="reason-num">03</div>
+            <div class="reason-title">Mobile-First Design</div>
+            <div class="reason-text">Built responsive from the ground up — works on any screen size seamlessly.</div>
+        </div>
+        <div class="reason reveal reveal-delay-4">
+            <div class="reason-num">04</div>
+            <div class="reason-title">Distraction-Free</div>
+            <div class="reason-text">Clean, focused interfaces that get out of the way and let you work.</div>
+        </div>
+        <div class="reason reveal reveal-delay-5">
+            <div class="reason-num">05</div>
+            <div class="reason-title">Always Free</div>
+            <div class="reason-text">No registration, no paywalls, no subscriptions — ever.</div>
+        </div>
+    </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+    <div class="marquee-track">
+        <div class="marquee-item"><div class="dot"></div> Unit Conversion</div>
+        <div class="marquee-item"><div class="dot"></div> Engineering Tools</div>
+        <div class="marquee-item"><div class="dot"></div> Construction Calculators</div>
+        <div class="marquee-item"><div class="dot"></div> Student Physics</div>
+        <div class="marquee-item"><div class="dot"></div> Free Forever</div>
+        <div class="marquee-item"><div class="dot"></div> Mobile Friendly</div>
+        <div class="marquee-item"><div class="dot"></div> Instant Results</div>
+        <div class="marquee-item"><div class="dot"></div> Zero Registration</div>
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-item"><div class="dot"></div> Unit Conversion</div>
+        <div class="marquee-item"><div class="dot"></div> Engineering Tools</div>
+        <div class="marquee-item"><div class="dot"></div> Construction Calculators</div>
+        <div class="marquee-item"><div class="dot"></div> Student Physics</div>
+        <div class="marquee-item"><div class="dot"></div> Free Forever</div>
+        <div class="marquee-item"><div class="dot"></div> Mobile Friendly</div>
+        <div class="marquee-item"><div class="dot"></div> Instant Results</div>
+        <div class="marquee-item"><div class="dot"></div> Zero Registration</div>
+    </div>
+</div>
+
+<!-- WHO USES US -->
+<section class="users-section">
+    <div class="users-inner">
+        <div class="users-left">
+            <h2 class="reveal">Who relies on <em>our tools</em> every day</h2>
+            <p class="reveal reveal-delay-1">From classrooms to construction sites, Unit Converter Hub serves a wide range of professionals and learners who need fast, accurate answers without the friction of traditional tools.</p>
+        </div>
+        <div class="user-cards">
+            <div class="user-card reveal">
+                <span class="user-card-icon">🎓</span>
+                <div class="user-card-title">Students</div>
+                <div class="user-card-text">Solving physics problems and checking unit conversions for assignments.</div>
+            </div>
+            <div class="user-card reveal reveal-delay-1">
+                <span class="user-card-icon">🔧</span>
+                <div class="user-card-title">Civil Engineers</div>
+                <div class="user-card-text">Calculating material quantities and verifying engineering units on the fly.</div>
+            </div>
+            <div class="user-card reveal reveal-delay-2">
+                <span class="user-card-icon">🏠</span>
+                <div class="user-card-title">Contractors</div>
+                <div class="user-card-text">Estimating bricks, cement, and tiles for accurate project budgeting.</div>
+            </div>
+            <div class="user-card reveal reveal-delay-3">
+                <span class="user-card-icon">💡</span>
+                <div class="user-card-title">Everyday Users</div>
+                <div class="user-card-text">Converting units for cooking, travel, fitness, and daily life decisions.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VISION -->
+<section class="vision-section">
+    <div class="vision-inner">
+        <div class="eyebrow reveal">Our Vision</div>
+        <h2 class="reveal reveal-delay-1">The world's most <em>trusted</em> free converter</h2>
+        <p class="reveal reveal-delay-2">We aim to become the go-to platform for unit conversion and construction calculation globally — delivering tools that professionals trust and beginners can instantly understand.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">Unit<span>Converter</span>Hub</div>
+    <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#converters">Converters</a>
+        <a href="index.html#calculators">Calculators</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="footer-copy">© 2026 Unit Converter Hub</div>
+</footer>
+
+<script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+
+    function animateRing() {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        ring.style.left = ringX + 'px';
+        ring.style.top = ringY + 'px';
+        requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.querySelectorAll('a, button, .tool-card, .reason, .user-card').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.width = '18px';
+            cursor.style.height = '18px';
+            ring.style.width = '56px';
+            ring.style.height = '56px';
+            ring.style.opacity = '0.3';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.width = '10px';
+            cursor.style.height = '10px';
+            ring.style.width = '36px';
+            ring.style.height = '36px';
+            ring.style.opacity = '0.5';
+        });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header shrink on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+            header.style.padding = '1rem 4rem';
+        } else {
+            header.style.padding = '1.5rem 4rem';
+        }
+    });
+</script>
+</body>
+</html>
