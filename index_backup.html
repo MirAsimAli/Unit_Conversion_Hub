@@ -1,3 +1,117 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit conversion Hub | Smart Online Calculators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online unit conversions and smart calculators for students, engineers and construction professionals.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Unit conversion Hub</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#Popular conversions">conversions</a>
+        <a href="#construction claculators">Calculators</a>
+        <a href="#Student Tools">Student Tools</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <h1>All-in-One Smart Unit conversion Platform</h1>
+    <p>Instant conversions for students, engineers, builders and everyday users.</p>
+<a href="#Popular conversions" class="btn-primary">Start Converting</a>
+</section>
+
+<section class="section" id="Popular conversions">
+    <h2>Popular conversions</h2>
+    <div class="grid">
+        <div class="grid">
+    <div class="card"><a href="tools/length.html">Length conversion</a></div>
+    <div class="card"><a href="tools/weight.html">Weight conversion</a></div>
+    <div class="card"><a href="tools/temperature.html">Temperature conversion</a></div>
+    <div class="card"><a href="tools/area.html">Area conversion</a></div>
+    <div class="card"><a href="tools/volume.html">Volume conversion</a></div>
+    <div class="card"><a href="tools/density.html">Density conversion</a></div>
+    <div class="card"><a href="tools/pressure.html">Pressure conversion</a></div>
+    <div class="card"><a href="tools/speed.html">Speed conversion</a></div>
+</div>
+
+
+    </div>
+</section>
+
+<section class="section" id="construction claculators">
+    <h2>Construction Calculators</h2>
+    <div class="grid">
+        <div class="card">
+            <a href="calculators/bricks.html">Brick Calculator</a>
+        </div>
+
+        <div class="card">
+            <a href="calculators/cement.html">Cement Calculator</a>
+        </div>
+
+        <div class="card">
+            <a href="calculators/tiles.html">Tiles Calculator</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="Student Tools">
+    <h2>Student Tools</h2>
+    <div class="grid">
+
+        <div class="card">
+            <a href="student-tools/physics-formulas.html">
+                Physics Formula Sheet
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="student-tools/quick-calculator.html">
+                Quick Calculator
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="section light-bg">
+    <h2>Why Use Unit conversion Hub?</h2>
+    <div class="grid">
+        <div class="card">⚡ Fast & Accurate Calculations</div>
+        <div class="card">📱 Mobile Friendly Design</div>
+        <div class="card">🎓 Student & Engineering Focused</div>
+        <div class="card">🧱 Construction Ready Tools</div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Free Forever. No Signup Required.</h2>
+    <p>Start using smart tools instantly.</p>
+</section>
+
+</main>
+
+ 
+<footer>
+    <p>© 2026 Unit conversion Hub</p>
+    <p>Free Online conversions & Calculators for Students and Engineers</p>
+</footer>
+ 
+
+</body>
+</html> -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +146,6 @@
             background-color: var(--surface);
             color: var(--ink);
             overflow-x: hidden;
-            max-width: 100vw;
             cursor: none;
         }
 
@@ -93,15 +206,6 @@
         nav a:hover { color: var(--ink); }
         nav a:hover::after { width: 100%; }
 
-        /* HAMBURGER BUTTON */
-        .menu-btn {
-            display: none;
-            background: none; border: none;
-            font-size: 1.5rem; color: var(--ink);
-            cursor: pointer; padding: 0.25rem;
-            line-height: 1; z-index: 600; position: relative;
-        }
-
         /* HERO */
         .hero {
             min-height: 100vh;
@@ -127,7 +231,7 @@
         }
         h1 {
             font-family: 'Syne', sans-serif; font-weight: 800;
-            font-size: clamp(2.2rem, 7vw, 5.5rem);
+            font-size: clamp(3rem, 5vw, 5.5rem);
             line-height: 0.95; letter-spacing: -0.03em;
             color: var(--ink); margin-bottom: 2rem;
             opacity: 0; animation: fadeUp 0.9s ease 0.35s forwards;
@@ -210,7 +314,14 @@
         }
 
         /* SECTION SHARED */
-        .section-wrap { max-width: 1200px; margin: 0 auto; padding: 7rem 4rem; }
+        .section-wrap {
+            max-width: 1200px; margin: 0 auto;
+            padding: 7rem 4rem;
+        }
+        .section-header {
+            display: flex; align-items: flex-end;
+            justify-content: space-between; margin-bottom: 3rem;
+        }
         .section-eyebrow {
             font-size: 0.75rem; font-weight: 500;
             letter-spacing: 0.14em; text-transform: uppercase;
@@ -218,7 +329,8 @@
             display: flex; align-items: center; gap: 0.75rem;
         }
         .section-eyebrow::before {
-            content: ''; display: block; width: 28px; height: 1.5px; background: var(--accent);
+            content: ''; display: block;
+            width: 28px; height: 1.5px; background: var(--accent);
         }
         .section-wrap h2 {
             font-family: 'Syne', sans-serif; font-weight: 800;
@@ -227,7 +339,7 @@
         }
         .section-wrap h2 em { font-style: italic; color: var(--accent); }
 
-        /* CONVERSIONS GRID */
+        /* conversionS GRID */
         .conversions-grid {
             display: grid; grid-template-columns: repeat(4, 1fr);
             gap: 1px; background: var(--line);
@@ -239,14 +351,17 @@
             transition: background 0.3s ease;
         }
         .tool-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: var(--accent); transform: scaleX(0); transform-origin: left;
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: var(--accent);
+            transform: scaleX(0); transform-origin: left;
             transition: transform 0.35s ease;
         }
         .tool-card:hover { background: var(--ink); }
         .tool-card:hover::before { transform: scaleX(1); }
         .tool-card:hover .tool-card-name { color: var(--surface); }
         .tool-card:hover .tool-card-arrow { color: var(--accent); opacity: 1; }
+
         .tool-card-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
         .tool-card-name {
             font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
@@ -254,16 +369,18 @@
         }
         .tool-card-arrow {
             position: absolute; bottom: 1.5rem; right: 1.5rem;
-            font-size: 1.2rem; color: var(--accent); opacity: 0; transition: opacity 0.3s ease;
+            font-size: 1.2rem; color: var(--accent);
+            opacity: 0; transition: opacity 0.3s ease;
         }
 
-        /* CONSTRUCTION */
+        /* CONSTRUCTION GRID */
         .construction-section {
             background: var(--ink); padding: 7rem 0;
             position: relative; overflow: hidden;
         }
         .construction-section::before {
-            content: 'BUILD'; position: absolute; top: 50%; left: 50%;
+            content: 'BUILD';
+            position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             font-family: 'Syne', sans-serif; font-size: 20vw; font-weight: 800;
             color: rgba(255,255,255,0.02); letter-spacing: -0.05em;
@@ -273,6 +390,7 @@
             max-width: 1200px; margin: 0 auto;
             padding: 0 4rem; position: relative; z-index: 2;
         }
+        .construction-section .section-eyebrow { color: var(--accent); }
         .construction-section h2 {
             font-family: 'Syne', sans-serif; font-weight: 800;
             font-size: clamp(2rem, 3.5vw, 3rem);
@@ -286,16 +404,20 @@
         .calc-card {
             background: var(--ink); padding: 3rem 2.5rem;
             text-decoration: none; display: block;
-            position: relative; overflow: hidden; transition: background 0.3s ease;
+            position: relative; overflow: hidden;
+            transition: background 0.3s ease;
         }
         .calc-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: var(--accent); transform: scaleX(0); transform-origin: left;
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: var(--accent);
+            transform: scaleX(0); transform-origin: left;
             transition: transform 0.35s ease;
         }
         .calc-card:hover { background: rgba(255,255,255,0.04); }
         .calc-card:hover::before { transform: scaleX(1); }
         .calc-card:hover .calc-name { color: var(--accent); }
+
         .calc-icon { font-size: 2.2rem; margin-bottom: 1.5rem; display: block; }
         .calc-name {
             font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700;
@@ -309,31 +431,41 @@
         }
 
         /* STUDENT TOOLS */
-        .student-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+        .student-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+            background: var(--line);
+        }
         .student-card {
             background: var(--surface-warm); padding: 3.5rem 3rem;
             text-decoration: none; display: block;
-            position: relative; overflow: hidden; transition: background 0.3s ease;
+            position: relative; overflow: hidden;
+            transition: background 0.3s ease;
         }
         .student-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-            background: var(--accent); transform: scaleX(0); transform-origin: left;
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: var(--accent);
+            transform: scaleX(0); transform-origin: left;
             transition: transform 0.4s ease;
         }
         .student-card:hover { background: var(--ink); }
         .student-card:hover::before { transform: scaleX(1); }
         .student-card:hover .student-name { color: var(--surface); }
         .student-card:hover .student-icon { filter: brightness(10); }
+
         .student-icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; transition: filter 0.3s ease; }
         .student-name {
             font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700;
             color: var(--ink); transition: color 0.3s ease;
         }
 
-        /* WHY */
+        /* WHY SECTION */
         .why-section { background: var(--surface-warm); }
         .why-section .section-wrap { padding: 7rem 4rem; }
-        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); }
+        .why-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 1px; background: var(--line);
+        }
         .why-card {
             background: var(--surface-warm); padding: 2.5rem 2rem;
             transition: background 0.3s ease, transform 0.3s ease;
@@ -343,7 +475,10 @@
             font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700;
             letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1.2rem;
         }
-        .why-text { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+        .why-text {
+            font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700;
+            color: var(--ink); line-height: 1.3;
+        }
 
         /* MARQUEE */
         .marquee-section {
@@ -351,7 +486,10 @@
             border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
             padding: 2rem 0; overflow: hidden;
         }
-        .marquee-track { display: flex; gap: 3rem; animation: marquee 25s linear infinite; white-space: nowrap; }
+        .marquee-track {
+            display: flex; gap: 3rem;
+            animation: marquee 25s linear infinite; white-space: nowrap;
+        }
         .marquee-item {
             font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 600;
             letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
@@ -378,7 +516,10 @@
             letter-spacing: -0.03em; line-height: 1; color: var(--surface); margin-bottom: 1.2rem;
         }
         .cta-inner h2 em { color: var(--accent); font-style: italic; }
-        .cta-inner p { font-size: 1rem; color: rgba(245,244,240,0.45); font-weight: 300; margin-bottom: 2.5rem; }
+        .cta-inner p {
+            font-size: 1rem; color: rgba(245,244,240,0.45);
+            font-weight: 300; margin-bottom: 2.5rem;
+        }
 
         /* FOOTER */
         footer {
@@ -386,7 +527,10 @@
             padding: 2.5rem 4rem;
             display: flex; align-items: center; justify-content: space-between;
         }
-        .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--ink); }
+        .footer-logo {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: 0.95rem; color: var(--ink);
+        }
         .footer-logo span { color: var(--accent); }
         .footer-copy { font-size: 0.8rem; color: var(--ink-muted); }
         .footer-nav { display: flex; gap: 2rem; }
@@ -397,77 +541,47 @@
         .footer-nav a:hover { color: var(--ink); }
 
         /* ANIMATIONS */
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
         @keyframes spin { to { transform: rotate(360deg); } }
-        @keyframes scrollLine { 0% { left: -100%; } 100% { left: 100%; } }
-        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @keyframes scrollLine {
+            0% { left: -100%; } 100% { left: 100%; }
+        }
+        @keyframes marquee {
+            from { transform: translateX(0); } to { transform: translateX(-50%); }
+        }
 
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
         .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
 
-        /* ======================== */
-        /*   MOBILE RESPONSIVE      */
-        /* ======================== */
+        /* RESPONSIVE */
         @media (max-width: 900px) {
-
-            /* Cursor off */
-            body { cursor: auto; }
-            .cursor, .cursor-ring { display: none; }
-
-            /* Header */
-            header { padding: 1rem 1.5rem; }
-
-            /* Nav → fullscreen overlay */
-            nav {
-                display: none;
-                position: fixed; inset: 0;
-                background: var(--surface);
-                flex-direction: column; align-items: center; justify-content: center;
-                gap: 2.5rem; z-index: 400;
-            }
-            nav.open { display: flex; }
-            nav.open a { font-size: 1.1rem; letter-spacing: 0.06em; }
-
-            /* Hamburger visible */
-            .menu-btn { display: flex; }
-
-            /* Hero */
+            header { padding: 1.25rem 2rem; }
+            nav { display: none; }
             .hero { grid-template-columns: 1fr; min-height: auto; }
-            .hero-left { padding: 6rem 1.5rem 3rem; }
-            .hero-right { height: 240px; }
-            .hero-scroll { display: none; }
-
-            /* Sections padding */
-            .section-wrap { padding: 4rem 1.5rem; }
-            .why-section .section-wrap { padding: 4rem 1.5rem; }
-            .construction-inner { padding: 0 1.5rem; }
-            .construction-section { padding: 4rem 0; }
-
-            /* Grids */
+            .hero-left { padding: 7rem 2rem 4rem; }
+            .hero-right { height: 300px; }
+            .hero-scroll { left: 2rem; }
+            .section-wrap { padding: 4rem 2rem; }
             .conversions-grid { grid-template-columns: 1fr 1fr; }
+            .construction-inner { padding: 0 2rem; }
             .calc-grid { grid-template-columns: 1fr; }
             .student-grid { grid-template-columns: 1fr; }
             .why-grid { grid-template-columns: 1fr 1fr; }
-
-            /* Card padding */
-            .tool-card { padding: 1.4rem 1.2rem; }
-            .calc-card { padding: 2rem 1.5rem; }
-            .student-card { padding: 2.5rem 1.5rem; }
-
-            /* CTA */
-            .cta-section { padding: 4rem 1.5rem; }
-
-            /* Footer */
-            footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
-            .footer-nav { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
-
-            /* Prevent iOS input zoom */
-            input, select, textarea { font-size: 16px !important; }
+            .cta-section { padding: 5rem 2rem; }
+            footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
         }
     </style>
 </head>
@@ -489,7 +603,7 @@
 <!-- HEADER -->
 <header>
     <div class="logo">Unit<span>conversion</span>Hub</div>
-    <nav id="mainNav">
+    <nav>
         <a href="index.html">Home</a>
         <a href="#popular-conversions">conversions</a>
         <a href="#construction-calculators">Calculators</a>
@@ -497,7 +611,6 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
 </header>
 
 <!-- HERO -->
@@ -529,7 +642,7 @@
     </div>
 </section>
 
-<!-- POPULAR CONVERSIONS -->
+<!-- POPULAR conversionS -->
 <section id="popular-conversions">
     <div class="section-wrap">
         <div class="reveal">
@@ -706,20 +819,25 @@
 </footer>
 
 <script>
-    // Cursor
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
     let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
     document.addEventListener('mousemove', e => {
         mouseX = e.clientX; mouseY = e.clientY;
-        cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
     });
+
     function animateRing() {
-        ringX += (mouseX - ringX) * 0.12; ringY += (mouseY - ringY) * 0.12;
-        ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        ring.style.left = ringX + 'px';
+        ring.style.top = ringY + 'px';
         requestAnimationFrame(animateRing);
     }
     animateRing();
+
     document.querySelectorAll('a, .why-card').forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursor.style.width = '18px'; cursor.style.height = '18px';
@@ -731,32 +849,15 @@
         });
     });
 
-    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Header shrink
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
-        header.style.padding = window.scrollY > 60 ? '0.75rem 1.5rem' : '1rem 1.5rem';
-    });
-
-    // Hamburger menu
-    function toggleMenu() {
-        const nav = document.getElementById('mainNav');
-        const btn = document.getElementById('menuBtn');
-        nav.classList.toggle('open');
-        btn.textContent = nav.classList.contains('open') ? '✕' : '☰';
-    }
-
-    // Close menu on link click
-    document.querySelectorAll('#mainNav a').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById('mainNav').classList.remove('open');
-            document.getElementById('menuBtn').textContent = '☰';
-        });
+        header.style.padding = window.scrollY > 60 ? '1rem 4rem' : '1.5rem 4rem';
     });
 </script>
 </body>
